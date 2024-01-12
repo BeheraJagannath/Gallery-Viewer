@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">New Gallery</string>
+    <dimen name="_10sdp">10.00dp</dimen>
+    <dimen name="_20sdp">20.00dp</dimen>
+    <dimen name="_7sdp">7.00dp</dimen>
+    <dimen name="_15sdp">15.00dp</dimen>
+    <dimen name="_5sdp">5.00dp</dimen>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vw_rationale_storage">Need Reading Storage Permission for Picking Files</string>
+    <string name="view_types">View Types</string>
+    <string name="no_favourite">No Favourite Images</string>
+    <string name="_2_column">2 Column</string>
+    <string name="_3_column">3 Column</string>
+    <string name="_4_column">4 Column</string>
+    <string name="_1_sec">1 sec</string>
+    <string name="_2_sec">2 Sec</string>
+    <string name="_3_sec">3 Sec</string>
+    <string name="_4_sec">4 Sec</string>
+    <string name="_5_sec">5 Sec</string>
+    <string name="sorting">Sorting</string>
+    <string name="no_of_photos">Number Of Photos</string>
+    <string name="last_modified_date">Last modify Date</string>
+    <string name="name">Name</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="slideshow_timer">Slideshow Timer</string>
+    <string name="password_protect">If you want to prevent some important photos to access by unauthorized person then set security lock.</string>
+    <string name="image_name">Image Name</string>
+    <string name="no_data_available">If not a Single Private or Hidden images are available.</string>
+    <string name="no_data">No Data available</string>
+
+</resources>

@@ -1,0 +1,66 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/allbottom_background.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/bottomsheet_background.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/curve_btn.xml" value="0.2115" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/delete.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/favourite_img.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_back.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_calendar.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_horizontal.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_landscape.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_left_rotate.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_right_rotate.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/ic_vertical.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/image_background.xml" value="0.253" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/menu_more.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/select_favourite.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/drawable/unselect_favourite.xml" value="0.211" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_album.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_albumview.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_crop.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_edit.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_favourite.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_favourite_viewer.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_image_view.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_image_viewer.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_main.xml" value="0.26180555555555557" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_private_view.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_recycle_binview.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_recyclebin.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/activity_rotate.xml" value="0.3484375" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/addto_album.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/album_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/album_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/album_list.xml" value="0.33" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/album_viewlayout.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/bottomsheet_dialog.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/date_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/delete_dialog.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/details_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/fav_list.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/fragment_album.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/fragment_photos.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/fragment_privacy.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/image_layout.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/image_slide.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/image_view.xml" value="0.33" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/move_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/rename_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/scrolling_xml.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/slideshow_dialog.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/sorting_dialog.xml" value="0.3625" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/tab_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/Users/Cubezytech/AndroidStudioProjects/NewGallery2/app/src/main/res/layout/tab_layouy.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

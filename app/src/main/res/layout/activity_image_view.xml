@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="imageFiles"
+            type="com.example.newgallery.modelclass.ImageFiles" />
+
+        <variable
+            name="onClickListener"
+            type="com.example.newgallery.activity.ImageViewActivity.MyClickHandlers" />
+    </data>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ImageViewActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentTop="true"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:padding="17dp"
+                android:onClick="@{onClickListener::onBackListener}"
+                android:src="@drawable/ic_back" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@+id/imgFav"
+                android:layout_toRightOf="@+id/imgBack">
+
+                <TextView
+                    android:id="@+id/tv_imgName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:text="@{imageFiles.name}"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_DateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_imgName"
+                    android:marqueeRepeatLimit="1"
+                    android:maxLines="1"
+                    android:text="@{imageFiles .date}"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgFav"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:padding="17dp"
+                android:src="@drawable/favourite_img" />
+
+        </RelativeLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/imgViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBottom"
+            android:layout_below="@+id/rl_toolbar" />
+
+        <LinearLayout
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/img_Share"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:padding="16dp"
+                android:onClick="@{onClickListener::onShareListener}"
+                android:src="@drawable/share" />
+
+            <ImageView
+                android:id="@+id/img_private"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:padding="16dp"
+                android:onClick="@{onClickListener::onProtectListener}"
+                android:src="@drawable/privacy" />
+
+            <ImageView
+                android:id="@+id/img_Edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:padding="16dp"
+                android:onClick="@{onClickListener::onImageEditListener}"
+                android:src="@drawable/edit" />
+
+            <ImageView
+                android:id="@+id/img_Delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:padding="16dp"
+                android:onClick="@{onClickListener::onImageDeleteListener}"
+                android:src="@drawable/delete" />
+
+            <ImageView
+                android:id="@+id/img_More"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:padding="18dp"
+                android:onClick="@{onClickListener::onMoreListener}"
+                android:src="@drawable/menu_more" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/llMainPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/add_to_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add To Album"
+                android:textColor="@color/textview_color"
+                android:onClick="@{onClickListener::onAddAlbumListener}"
+                android:textSize="18dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color"/>
+            <TextView
+                android:id="@+id/slideshow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start SlideShow"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textColor="@color/textview_color"
+                android:onClick="@{onClickListener::onSlideShowListener}"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color"/>
+            <TextView
+                android:id="@+id/walpaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set as Wallpaper"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textColor="@color/textview_color"
+                android:onClick="@{onClickListener::onSetWallpaperListener}"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color"/>
+            <TextView
+                android:id="@+id/rename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rename"
+                android:onClick="@{onClickListener::onRenameListener}"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textColor="@color/textview_color"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color"/>
+            <TextView
+                android:id="@+id/print"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Print"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:onClick="@{onClickListener::onPrintListener}"
+                android:textColor="@color/textview_color"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/devider_color"/>
+            <TextView
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:onClick="@{onClickListener::onDetailsListener}"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:textColor="@color/textview_color"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/llCreateAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Add To Album"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rl_createAlbum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{onClickListener::onCreateAlbumListener}">
+
+                <ImageView
+                    android:id="@+id/imgCrAlbum"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/create_album" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imgCrAlbum"
+                    android:text="Create an album"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPrivate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{onClickListener::onPrivateListener}">
+
+                <ImageView
+                    android:id="@+id/imgPrAlbum"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/private_album" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imgPrAlbum"
+                    android:text="Private album"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_20sdp"
+        android:visibility="gone"
+        android:weightSum="1.0">
+
+        <TextView
+            android:id="@+id/tvAlbumViewCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/image_background"
+            android:gravity="center"
+            android:onClick="@{onClickListener::onAlbumViewCancelListener}"
+            android:paddingVertical="15dp"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCreateAnAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="11dp"
+            android:text="Create an Album"
+            android:textColor="@color/black"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_albumName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="22dp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/allbottom_background"
+            android:hint="Album name"
+            android:imeOptions="actionDone"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#80000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/image_background"
+                android:gravity="center"
+                android:onClick="@{onClickListener::onCancelListener}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/image_background"
+                android:gravity="center"
+                android:onClick="@{onClickListener::onOkListener}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Ok"
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Rename Album"
+            android:textColor="@color/black"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_rename"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="22dp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/allbottom_background"
+            android:hint="Image Name"
+            android:imeOptions="actionDone"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="#80000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="22dp"
+            android:layout_marginTop="17dp"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <TextView
+                android:id="@+id/tvRenameCan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/image_background"
+                android:gravity="center"
+                android:onClick="@{onClickListener::onRenameCanListener}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRenameOk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/image_background"
+                android:gravity="center"
+                android:onClick="@{onClickListener::onRenameOkListener}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Ok"
+                android:textColor="@color/white"
+                android:textSize="19dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMoveAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="Adding Photos"
+            android:textColor="@color/black"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMoveAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:onClick="@{onClickListener::onMoveAlbumListener}"
+            android:padding="10dp"
+            android:text="Move"
+            android:textColor="@color/textview_color"
+            android:textSize="18dp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:background="@color/devider_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCopy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:onClick="@{onClickListener::onCopyListener}"
+                android:padding="10dp"
+                android:text="Copy"
+                android:textColor="@color/textview_color"
+                android:textSize="18dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="3dp"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_10sdp"
+            android:weightSum="1.0">
+
+            <TextView
+                android:id="@+id/tvMoveAlbumCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@drawable/image_background"
+                android:gravity="center"
+                android:paddingVertical="13dp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_image_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomsheet_background"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_calender"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_toRightOf="@+id/img_calender"
+                    android:text="18 September 2020"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+                <ImageView
+                    android:id="@+id/img_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_landscape" />
+
+                <TextView
+                    android:id="@+id/tv_filename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/img_image"
+                    android:maxLines="1"
+                    android:text="@{imageFiles.name}"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/img_image1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_landscape"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_path"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/img_image1"
+                    android:text="@{imageFiles.path}"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_image2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_landscape"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/img_image2"
+                    android:text="1.60 MB"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_resolution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_toRightOf="@+id/tv_size"
+                    android:text="2220 * 1080"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
+            android:id="@+id/google_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            app:type="chrome_floating_circles" />
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
